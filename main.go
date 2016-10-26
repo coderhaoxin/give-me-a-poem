@@ -1,10 +1,10 @@
 package main
 
-import "math/rand"
+import "time"
 import "fmt"
 
 func main() {
 	poems := loadPoems()
-	i := rand.Int() % len(poems)
+	i := time.Now().Nanosecond() % len(poems)
 	fmt.Println(poems[i])
 }
