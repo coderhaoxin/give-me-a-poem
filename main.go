@@ -7,6 +7,8 @@ import "fmt"
 
 func main() {
 
+	version := "v0.1.0"
+
 	root := &cobra.Command{
 		Use:   "give-me-a-poem",
 		Short: "Get a poem.",
@@ -36,6 +38,14 @@ func main() {
 		Short: "Get a song poem",
 		Run: func(c *cobra.Command, args []string) {
 			getPoem("song")
+		},
+	})
+
+	root.AddCommand(&cobra.Command{
+		Use:   "version",
+		Short: "Get the version",
+		Run: func(c *cobra.Command, args []string) {
+			fmt.Println(version)
 		},
 	})
 
