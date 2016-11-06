@@ -1,7 +1,3 @@
 package main
 
-func loadTang() []string {
-	return []string{
-		`TODO`,
-	}
-}
+var tangPoems = []Poem{}

@@ -7,7 +7,7 @@ import "fmt"
 
 func main() {
 
-	version := "v0.1.0"
+	version := "v0.2.0"
 
 	root := &cobra.Command{
 		Use:   "give-me-a-poem",
@@ -53,11 +53,11 @@ func main() {
 }
 
 func getPoem(mode string) {
-	var poems []string
+	var poems []Poem
 
 	switch mode {
 	case "all":
-		poems = loadPili()
+		poems = loadAll()
 	case "pili":
 		poems = loadPili()
 	case "tang":
@@ -72,8 +72,8 @@ func getPoem(mode string) {
 	printAndCopy(poem)
 }
 
-func printAndCopy(poem string) {
-	fmt.Printf("\n%s\n", poem)
-	_ = clipboard.WriteAll(poem)
+func printAndCopy(p Poem) {
+	fmt.Printf("\n%s\n", p.Content)
+	_ = clipboard.WriteAll(p.Content)
 	fmt.Print("\nCopied!\n")
 }
