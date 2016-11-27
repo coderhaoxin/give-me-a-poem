@@ -281,4 +281,8 @@ var piliPoems = []Poem{
 		Content: `悟来时见江海古, 苍崖行遍谒玄门; 向道偶题人间世, 一笛一剑一昆仑.`,
 		Tags:    []string{},
 	},
+	Poem{
+		Content: `看红尘冉冉, 须臾无间. 参遍昙华演幻, 问法珠玄玄. 方寸有变, 听尽默剑说禅.`,
+		Tags:    []string{`书`},
+	},
 }
