@@ -7,7 +7,7 @@ import "fmt"
 
 func main() {
 
-	version := "v0.2.0"
+	version := "v0.3.0"
 
 	root := &cobra.Command{
 		Use:   "give-me-a-poem",
@@ -16,6 +16,14 @@ func main() {
 			getPoem("all")
 		},
 	}
+
+	root.AddCommand(&cobra.Command{
+		Use:   "c",
+		Short: "Get a chan poem",
+		Run: func(c *cobra.Command, args []string) {
+			getPoem("chan")
+		},
+	})
 
 	root.AddCommand(&cobra.Command{
 		Use:   "p",
@@ -58,6 +66,8 @@ func getPoem(mode string) {
 	switch mode {
 	case "all":
 		poems = loadAll()
+	case "chan":
+		poems = loadChan()
 	case "pili":
 		poems = loadPili()
 	case "tang":
