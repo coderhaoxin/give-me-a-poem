@@ -289,4 +289,8 @@ var piliPoems = []Poem{
 		Content: `仙衣眠云碧岚袍, 一襟潇洒, 两袖飘飘; 玉墨舒心春酝瓢, 行也逍遥, 坐也逍遥.`,
 		Tags:    []string{},
 	},
+	Poem{
+		Content: `倚刀独卧凛霜间, 笑看芳华尽凋残. 百景独钟此风雪, 爱他飞白爱他寒.`,
+		Tags:    []string{},
+	},
 }
